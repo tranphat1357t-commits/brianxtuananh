@@ -2873,6 +2873,52 @@ window.onload = function () {
   });
 })();
 </script>
+<!-- LOCK SCREEN -->
+<div id="lockScreen">
+  <div class="lock-content">
+    <h1>⚠️ Warning:</h1>
+    <p>Panel đã bị tạm thời khóa<br>và đợi admin cập nhật sau</p>
+  </div>
+</div>
+
+<style>
+#lockScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* CHẶN TOÀN BỘ TƯƠNG TÁC */
+  pointer-events: all;
+}
+
+.lock-content h1 {
+  color: red;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.lock-content p {
+  color: white;
+  font-size: 20px;
+  line-height: 1.5;
+}
+</style>
+
+<script>
+// CHẶN CLICK, PHÍM, CUỘN
+document.addEventListener('click', e => e.stopPropagation(), true);
+document.addEventListener('keydown', e => e.preventDefault(), true);
+document.addEventListener('touchstart', e => e.preventDefault(), true);
+document.addEventListener('scroll', e => e.preventDefault(), true);
+</script>
 
 </body>
 </html>
